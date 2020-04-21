@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   grid: {
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   paper: {
     padding: theme.spacing(2),
@@ -57,7 +57,7 @@ export default function ProjectGrid() {
       <Typography variant='h1' color='primary'>Projects</Typography> 
       <Grid container spacing={3} className={classes.grid}>
         {projects.map(card => (
-          <Grid item key={card.title} xs={2}>
+          <Grid item key={card.title} xs>
             <Card className={classes.paper} raised>
               <CardActionArea onClick={() => { window.location.assign(card.link); }} >
               <CardHeader
