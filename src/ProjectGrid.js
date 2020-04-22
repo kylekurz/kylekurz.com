@@ -14,12 +14,12 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   grid: {
-    justifyContent: 'center',
+    display: 'flex',
+    padding: theme.spacing(2),
   },
   paper: {
     padding: theme.spacing(2),
     color: theme.palette.text.secondary,
-    margin: theme.spacing(2),
     display: 'flex',
     flexDirection: 'column',
   },
@@ -44,7 +44,7 @@ const projects = [
   },
   {
     title: 'Sangoma Technologies, Inc.',
-    description: ['Key projects as Director of Mobile Unified Communication.'],
+    description: ['Key projects for Sangoma as Director of Mobile Unified Communication.'],
     link: "https://www.sangoma.com/business-phone-systems/features/softphone/",
   },
 ];
