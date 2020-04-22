@@ -54,7 +54,7 @@ export default function ProjectGrid() {
 
   return (
     <div className={classes.root}>
-      <Typography variant='h1' color='primary'>Projects</Typography> 
+      <Typography variant='h3' color='primary'>Projects</Typography> 
       <Grid container spacing={3} className={classes.grid}>
         {projects.map(card => (
           <Grid item key={card.title} xs>
