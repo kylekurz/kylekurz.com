@@ -1,83 +1,80 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardHeader from '@material-ui/core/CardHeader';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-    padding: theme.spacing(2),
-  },
-  grid: {
-    display: 'flex',
-    padding: theme.spacing(2),
-  },
-  paper: {
-    padding: theme.spacing(2),
-    color: theme.palette.text.secondary,
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  control: {
-    padding: theme.spacing(2),
-  },
-  cardHeader: {
-    backgroundColor: theme.palette.grey[200],
-  },
-}));
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import CardActionArea from '@mui/material/CardActionArea';
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 
 const projects = [
   {
     title: "Weather's Clear",
-    description: ['A simple weather app to give you forecast notifications 24 hours in advance.'],
-    link: "https://weathersclear.com",
+    description: [
+      'A simple weather app to give you forecast notifications 24 hours in advance.',
+    ],
+    link: 'https://weathersclear.com',
   },
   {
     title: 'You Belong Church',
-    description: ['Full featured congregation engagement platform for churches of all sizes.'],
-    link: "https://youbelong.church",
+    description: [
+      'Full featured congregation engagement platform for churches of all sizes.',
+    ],
+    link: 'https://youbelong.church',
   },
   {
     title: 'Sangoma Technologies, Inc.',
-    description: ['Key projects for Sangoma as Director of Mobile Unified Communication.'],
-    link: "https://www.sangoma.com/business-phone-systems/features/softphone/",
+    description: [
+      'Key projects for Sangoma as Director of Mobile Unified Communication.',
+    ],
+    link:
+      'https://www.sangoma.com/business-phone-systems/features/softphone/',
   },
 ];
 
 export default function ProjectGrid() {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
-      <Typography variant='h3' color='primary'>Projects</Typography> 
-      <Grid container spacing={3} className={classes.grid}>
-        {projects.map(card => (
-          <Grid item key={card.title} xs>
-            <Card className={classes.paper} raised>
-              <CardActionArea onClick={() => { window.location.assign(card.link); }} >
-              <CardHeader
-                title={card.title}
-                titleTypographyProps={{ align: 'center' }}
-                subheaderTypographyProps={{ align: 'center' }}
-                className={classes.cardHeader}
+    <Box sx={{ flexGrow: 1, p: 2 }}>
+      <Typography variant="h3" color="primary">
+        Projects
+      </Typography>
+      <Grid container spacing={3} sx={{ display: 'flex', p: 2 }}>
+        {projects.map((card) => (
+          <Grid key={card.title} size={{ xs: 12, md: 4 }}>
+            <Card
+              raised
+              sx={{
+                p: 2,
+                color: 'text.secondary',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <CardActionArea
+                onClick={() => {
+                  window.location.assign(card.link);
+                }}
+              >
+                <CardHeader
+                  title={card.title}
+                  slotProps={{
+                    title: { align: 'center' },
+                    subheader: { align: 'center' },
+                  }}
+                  sx={{ bgcolor: 'grey.200' }}
                 />
-              <CardContent>
-                {card.description.map(line => (
-                  <Typography variant="subtitle1" align="center" key={line}>
-                  {line}
-                  </Typography>
-                ))}
-              </CardContent>
+                <CardContent>
+                  {card.description.map((line) => (
+                    <Typography variant="subtitle1" align="center" key={line}>
+                      {line}
+                    </Typography>
+                  ))}
+                </CardContent>
               </CardActionArea>
             </Card>
           </Grid>
         ))}
       </Grid>
-    </div>
+    </Box>
   );
 }

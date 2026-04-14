@@ -4,20 +4,27 @@
   "private": true,
   "homepage": "https://kylekurz.com",
   "proxy": "https://kylekurz.com",
+  "overrides": {
+    "@babel/runtime": "^7.26.10"
+  },
   "dependencies": {
-    "@material-ui/core": "^4.9.11",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
-    "typeface-roboto": "^0.0.75"
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@fontsource/roboto": "^5.2.5",
+    "@mui/material": "^9.0.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.0"
   },
   "scripts": {
-    "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

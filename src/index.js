@@ -1,15 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import 'typeface-roboto';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
-const theme = createMuiTheme({
-  typography: {
-    useNextVariants: true,
-  },
+const theme = createTheme({
   palette: {
     primary: {
       main: '#ffffff',
@@ -18,27 +18,24 @@ const theme = createMuiTheme({
       main: '#000000',
     },
   },
-  contrastText: '#ffcc00',
-  overrides: {
+  components: {
     MuiFormControl: {
-      root: {
-        marginTop: 0,
-      }
-    }
-  }
+      styleOverrides: {
+        root: {
+          marginTop: 0,
+        },
+      },
+    },
+  },
 });
 
-const ThemedApp = () => (
-  <MuiThemeProvider theme={theme}>
+const root = createRoot(document.getElementById('root'));
+root.render(
+  <ThemeProvider theme={theme}>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </MuiThemeProvider>
-);
-
-ReactDOM.render(
-  <ThemedApp />,
-  document.getElementById('root')
+  </ThemeProvider>
 );
 
 // If you want your app to work offline and load faster, you can change
