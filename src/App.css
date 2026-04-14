@@ -1,40 +1,24 @@
-.App {
-  text-align: center;
-  background-color: #212121;
+.App-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #07080d;
+  background-image:
+    radial-gradient(ellipse 120% 80% at 50% -20%, rgba(138, 180, 255, 0.18), transparent 55%),
+    radial-gradient(ellipse 80% 50% at 100% 50%, rgba(120, 160, 255, 0.06), transparent 45%),
+    radial-gradient(ellipse 60% 40% at 0% 80%, rgba(100, 140, 220, 0.05), transparent 50%);
+  background-attachment: fixed;
 }
 
 .App-logo {
-  height: 80vmin;
+  /* Was 120px; ~300% larger → 4× ≈ 480px, capped on short viewports */
+  height: min(512px, 75vh);
+  width: auto;
   pointer-events: none;
   fill: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #424242;
-  min-height: 100vh;
-  min-width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-footer {
-  background-color: #424242;
-  height: 80px;
-  min-width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
