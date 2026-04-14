@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "default": "kylekurz-a854c"
+  },
+  "targets": {
+    "kylekurz-a854c": {
+      "hosting": {
+        "kylekurz": ["kylekurz-a854c"]
+      }
+    }
+  }
+}
