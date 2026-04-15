@@ -11,11 +11,21 @@
 }
 
 .App-logo {
-  /* Was 120px; ~300% larger → 4× ≈ 480px, capped on short viewports */
-  height: min(512px, 75vh);
+  display: block;
+  /* Wide SVG + fixed height made width huge on phones; cap width first, then height on large screens */
+  max-width: 100%;
   width: auto;
+  height: auto;
+  max-height: min(420px, 42vh);
+  margin: 0 auto;
   pointer-events: none;
   fill: white;
+}
+
+@media (min-width: 600px) {
+  .App-logo {
+    max-height: min(512px, 75vh);
+  }
 }
 
 .App-footer {

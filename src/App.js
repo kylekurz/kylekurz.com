@@ -15,7 +15,15 @@ function App() {
   return (
     <Box className="App-root">
       <Container maxWidth="md" sx={{ py: { xs: 5, sm: 8 }, pb: 2 }}>
-        <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            mb: 3,
+            width: '100%',
+            minWidth: 0,
+          }}
+        >
           <img src={logo} className="App-logo" alt="" />
         </Box>
 

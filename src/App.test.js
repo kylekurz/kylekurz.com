@@ -20,8 +20,7 @@ test('renders hero, resume, and work callouts', () => {
     getByRole('heading', { level: 1, name: 'Kyle Kurz' })
   ).toBeInTheDocument();
   expect(getByText('Resume', { exact: true })).toBeInTheDocument();
-  expect(getByText('Work & projects', { exact: true })).toBeInTheDocument();
-  expect(getByText(/^Wildfire$/)).toBeInTheDocument();
-  expect(getByText(/Double K Audio/i)).toBeInTheDocument();
-  expect(getByText(/^Sangoma$/)).toBeInTheDocument();
+  expect(getByText('Wildfire Systems', { exact: true })).toBeInTheDocument();
+  expect(getByText('Double-K Audio', { exact: true })).toBeInTheDocument();
+  expect(getByText('Sangoma', { exact: true })).toBeInTheDocument();
 });
